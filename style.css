@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f8fb;
+  color: #2c3e50;
+  transition: background 0.5s ease;
+}
+
+/* Pulse on reminder */
+body.pulse {
+  animation: pulseBg 1.5s ease-in-out;
+}
+
+@keyframes pulseBg {
+  0% {
+    background: #f4f8fb;
+  }
+  50% {
+    background: #e3f2fd;
+  }
+  100% {
+    background: #f4f8fb;
+  }
+}
+
+/* Hamburger */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: white;
+  padding: 20px;
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  overflow-y: auto;
+  animation: slideIn 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Father UI */
+.screen {
+  padding: 80px 20px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  font-size: 26px;
+  margin-bottom: 5px;
+}
+
+.task-list {
+  max-width: 520px;
+  margin: auto;
+}
+
+.task {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: fadeUp 0.4s ease;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.task.done {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.task small {
+  font-size: 14px;
+  color: #607d8b;
+}
+
+.task button {
+  background: #4caf50;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease;
+}
+
+.task button:active {
+  transform: scale(0.85);
+  background: #66bb6a;
+}
+
+/* Soothing emoji background */
+.emoji-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.emoji-bg span {
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.08;
+  animation: floatEmoji 25s linear infinite;
+}
+
+.emoji-bg span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+}
+.emoji-bg span:nth-child(2) {
+  left: 30%;
+  animation-delay: 5s;
+}
+.emoji-bg span:nth-child(3) {
+  left: 50%;
+  animation-delay: 10s;
+}
+.emoji-bg span:nth-child(4) {
+  left: 70%;
+  animation-delay: 15s;
+}
+.emoji-bg span:nth-child(5) {
+  left: 85%;
+  animation-delay: 20s;
+}
+.emoji-bg span:nth-child(6) {
+  left: 95%;
+  animation-delay: 25s;
+}
+
+@keyframes floatEmoji {
+  from {
+    transform: translateY(110vh);
+  }
+  to {
+    transform: translateY(-10vh);
+  }
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 15px;
+  color: #7f8c8d;
+}
+
+/* Sidebar form */
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1565c0;
+}
+
+button.close {
+  background: #b71c1c;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+pre {
+  background: #f1f8e9;
+  padding: 12px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  font-size: 14px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

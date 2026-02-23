@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CARELOOP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <style></style>
+  </head>
+
+  <body>
+    <!-- 🔊 Notification Sound -->
+    <audio id="notifySound" src="sounds/notify.wav" preload="auto"></audio>
+
+    <!-- ☰ Hamburger -->
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+    <!-- Sidebar (Son / Caregiver tools) -->
+    <aside id="sidebar" class="sidebar hidden">
+      <h2>Caregiver Panel</h2>
+
+      <input id="taskInput" placeholder="Task name (e.g. Morning medicine)" />
+      <label>Time</label>
+      <input id="taskTime" type="time" />
+
+      <select id="taskType">
+        <option value="medicine">Medicine</option>
+        <option value="activity">Activity</option>
+        <option value="exercise">Exercise</option>
+      </select>
+
+      <button onclick="addTask()">Add Task</button>
+
+      <hr />
+
+      <button onclick="generateSummary()">Generate Daily Report</button>
+      <pre id="summaryBox"></pre>
+
+      <hr />
+
+      <h3>History</h3>
+      <div id="history"></div>
+
+      <button class="close" onclick="toggleSidebar()">Close</button>
+    </aside>
+
+    <!-- Father Dashboard -->
+    <main class="screen">
+      <header>
+        <h1>Good Morning 🌤️</h1>
+        <p>Here are your tasks for today</p>
+
+        <!-- Soothing Emoji Background -->
+        <div class="emoji-bg">
+          <span>😊</span>
+          <span>🌸</span>
+          <span>💙</span>
+          <span>🌿</span>
+          <span>🙂</span>
+          <span>🌼</span>
+        </div>
+      </header>
+
+      <section id="taskList" class="task-list"></section>
+
+      <footer>
+        <p>Just do what you can 💙</p>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
