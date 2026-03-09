@@ -1,6 +1,9 @@
 # 🫂 CARELOOP  
 *A gentle daily care & reminder system for loved ones*
 
+Link - https://lokesh-aim.github.io/CareLoop/
+
+
 CARELOOP is a **lightweight, offline-first web application** designed to help caregivers manage daily routines (medicine, activities, exercise) for elderly parents or dependents — with a **calm UI, smart reminders, and zero complexity**.
 
 Built using **pure HTML, CSS, and JavaScript** — no frameworks, no backend, no login.
